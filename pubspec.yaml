@@ -1,5 +1,5 @@
 name: golden_variant
-description: "A new Flutter package project."
+description: "A convenient golden test package that allows you to perform multi-variant test."
 version: 0.1.0
 repository: https://github.com/cyrax111/golden_variant
 
