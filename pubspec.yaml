@@ -1,7 +1,7 @@
 name: golden_variant
 description: "A new Flutter package project."
 version: 0.1.0
-homepage:
+repository: https://github.com/cyrax111/golden_variant
 
 environment:
   sdk: ^3.5.3
