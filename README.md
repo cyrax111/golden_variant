@@ -40,9 +40,9 @@ then use regular `testWidgets`:
   );
 ```
 
-![](https://github.com/cyrax111/blob/raw/master/golden_variant/assets/variants_preview.png?raw=true)
+![](https://github.com/cyrax111/golden_variant/blob/master/assets/variants_preview.png?raw=true)
 
-Check out the [example](https://github.com/cyrax111/golden_variant/tree/master/example)
+Check out the [example](https://github.com/cyrax111/golden_variant/tree/master/example).
 
 ## Getting started
 
