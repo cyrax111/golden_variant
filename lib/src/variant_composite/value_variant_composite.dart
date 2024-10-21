@@ -9,7 +9,8 @@ class ValueVariantComposite extends TestVariantComposite<ValueVariant<Object>> {
   CombinationTestVariants<ValueVariant<Object>> get currentValue {
     final currentValue = _currentValue;
     if (currentValue == null) {
-      throw StateError('currentValue is not initiated. Didn\'t execute setUp?');
+      throw StateError(
+          'currentValue is not initiated. Didn\'t set "variant" parameter to "testWidgets"?');
     }
     return currentValue;
   }
