@@ -4,7 +4,7 @@ version: 0.1.0
 repository: https://github.com/cyrax111/golden_variant
 
 environment:
-  sdk: ^3.5.3
+  sdk: ^3.4.3
   flutter: ">=1.17.0"
 
 dependencies:
