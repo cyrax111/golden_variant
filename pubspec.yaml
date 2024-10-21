@@ -1,6 +1,6 @@
 name: golden_variant
 description: "A convenient golden test package that allows you to perform multi-variant test."
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/cyrax111/golden_variant
 
 environment:
