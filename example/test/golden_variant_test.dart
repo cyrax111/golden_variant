@@ -23,13 +23,13 @@ void main() async {
         ),
       );
 
-      await expectMatchesGoldenFile(variant: variant, path: 'init');
+      await expectMatchesGoldenFile(DefaultPath(variant: variant, path: 'init'));
 
       // Tap the '+' icon and trigger a frame.
       await tester.tap(find.byIcon(Icons.add));
       await tester.pump();
 
-      await expectMatchesGoldenFile(variant: variant, path: 'tapped-button');
+      await expectMatchesGoldenFile(DefaultPath(variant: variant, path: 'tapped-button'));
     },
     variant: variant,
   );
