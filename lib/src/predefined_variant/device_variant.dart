@@ -4,7 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class DeviceVariant extends ValueVariant<DeviceInfo> {
-  DeviceVariant(super.values);
+  DeviceVariant(
+    super.values, {
+    this.setUpCallBack,
+    this.tearDownCallBack,
+  });
+
+  final Future<DeviceInfo> Function(DeviceInfo value)? setUpCallBack;
+  final Future<DeviceInfo> Function(DeviceInfo value, DeviceInfo memento)? tearDownCallBack;
 
   @override
   Future<DeviceInfo> setUp(DeviceInfo value) async {
@@ -26,6 +33,9 @@ class DeviceVariant extends ValueVariant<DeviceInfo> {
       top: value.safeAreas.top,
       bottom: value.safeAreas.bottom,
     );
+
+    await setUpCallBack?.call(value);
+
     return super.setUp(value);
   }
 
@@ -40,6 +50,9 @@ class DeviceVariant extends ValueVariant<DeviceInfo> {
 
     debugDisableShadows = true;
     debugDefaultTargetPlatformOverride = null;
+
+    await tearDownCallBack?.call(value, memento);
+
     await super.tearDown(value, memento);
   }
 
