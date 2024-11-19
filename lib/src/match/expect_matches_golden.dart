@@ -26,23 +26,24 @@ abstract interface class GoldenFilePathBuilder {
 
 class DefaultPath implements GoldenFilePathBuilder {
   const DefaultPath({
-    required this.variant,
+    this.variant,
     this.path,
     this.suffix,
     this.prefix,
   });
 
-  final ValueVariantComposite variant;
+  final ValueVariantComposite? variant;
   final String? path;
   final String? suffix;
   final String? prefix;
 
   @override
   String call() {
-    final variantStr = variant.currentValue.join('-').replaceAll(' ', '_');
+    final variantStr =
+        variant == null ? '' : '[${variant?.currentValue.join('-').replaceAll(' ', '_')}]';
     final suffixStr = suffix ?? '';
     final prefixStr = prefix == null ? '' : '$prefix-';
     final pathStr = path == null ? (prefix == null ? '' : '$prefix/') : '$path/';
-    return 'preview/$pathStr$prefixStr[$variantStr]$suffixStr.png';
+    return 'preview/$pathStr$prefixStr$variantStr$suffixStr.png';
   }
 }
