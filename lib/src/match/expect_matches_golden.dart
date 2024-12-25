@@ -42,7 +42,7 @@ class DefaultPath implements GoldenFilePathBuilder {
     final variantStr =
         variant == null ? '' : '[${variant?.currentValue.join('-').replaceAll(' ', '_')}]';
     final suffixStr = suffix ?? '';
-    final prefixStr = prefix == null ? '' : '$prefix-';
+    final prefixStr = prefix == null ? '' : '$prefix';
     final pathStr = path == null ? (prefix == null ? '' : '$prefix/') : '$path/';
     return 'preview/$pathStr$prefixStr$variantStr$suffixStr.png';
   }
